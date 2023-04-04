@@ -61,7 +61,7 @@ const About = () => {
         </Container>
       </section>
 
-      <BecomeDriverSection />
+      {/* <BecomeDriverSection /> */}
 
       <section>
         <Container>

@@ -68,7 +68,7 @@ const Home = () => {
         </Container>
       </section>
       {/* =========== become a driver section ============ */}
-      <BecomeDriverSection />
+      {/* <BecomeDriverSection /> */}
 
       {/* =========== testimonial section =========== */}
       <section>
