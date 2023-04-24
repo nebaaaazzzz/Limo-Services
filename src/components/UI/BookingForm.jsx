@@ -19,7 +19,7 @@ const BookingForm = () => {
         <input type="email" placeholder="Email" />
       </FormGroup>
       <FormGroup className="booking__form d-inline-block ms-1 mb-4">
-        <input type="number" placeholder="Phone Number" />
+        <input type="tel" placeholder="Phone Number" />
       </FormGroup>
 
       <FormGroup className="booking__form d-inline-block me-4 mb-4">
@@ -67,6 +67,7 @@ const BookingForm = () => {
           placeholder="Write"
         ></textarea>
       </FormGroup>
+      <button className="bookbutton">Book Now</button>
     </Form>
   );
 };

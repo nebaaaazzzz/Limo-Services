@@ -10,7 +10,7 @@
 }
 
 .booking__form select,
-.textarea {
+.text_area {
   width: 100%;
   padding: 10px 15px;
   color: #7c8a97;
@@ -40,4 +40,15 @@
   .booking__form select {
     font-size: 0.8rem;
   }
+}
+
+.bookbutton {
+  background-color: #000d6b;
+  
+  border-radius: 0px 4px 4px 0px;
+  color: #fff;
+  padding: 8px 15px;
+  width: 100%;
+  border: none;
+  outline: none;
 }

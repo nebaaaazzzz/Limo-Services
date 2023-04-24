@@ -1,8 +1,12 @@
-import React from "react";
+
 import { Link } from "react-router-dom";
 import { Container, Row, Col, Form, FormGroup, Input } from "reactstrap";
 import Helmet from "../components/Helmet/Helmet";
 import CommonSection from "../components/UI/CommonSection";
+import React, {useRef  } from 'react';
+import emailjs from '@emailjs/browser';
+import { toast } from "react-toastify";
+
 
 import "../styles/contact.css";
 
@@ -26,6 +30,33 @@ const socialLinks = [
 ];
 
 const Contact = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_er3t4rd', 'template_l8ral8f', form.current, 'jCA_n2fcS5PuK4pQb')
+      .then((result) => {
+          console.log(result.text);
+        toast.success("Message sent, We will contact you shortly", {
+         position: toast.POSITION.TOP_CENTER,
+            autoClose: 5000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
+
+
+      }, (error) => {
+          console.log(error.text);
+          alert("Sorry, your message could not be sent. Please try again later.");
+         
+      });
+      form.current.reset()
+    }
+
   return (
     <Helmet title="Contact">
       <CommonSection title="Contact" />
@@ -34,26 +65,52 @@ const Contact = () => {
           <Row>
             <Col lg="7" md="7">
               <h6 className="fw-bold mb-4">Get In Touch</h6>
+              <form ref={form} onSubmit={sendEmail}>
+       <FormGroup className="contact__form">
+                  <Input placeholder="Your Name" type="text"  name="user_name"/>
+                </FormGroup>
+       <FormGroup className="contact__form">
+                  <Input placeholder="Email" type="email" name="user_email" />
+                </FormGroup>
+        <FormGroup className="contact__form">
+                  <textarea
+                    rows="5"
+                    placeholder="Message"
+                    className="text_area"
+                    name="message"
+                  ></textarea>
+                </FormGroup>
+                <input className="contact__btn" type="submit" value="Send" />
+              </form>
+              
 
-              <Form>
-                <FormGroup className="contact__form">
-                  <Input placeholder="Your Name" type="text" />
+      {/* <form ref={form} onSubmit={sendEmail}>
+      
+      <input type="text" name="user_name"  />
+      
+      <input type="email" name="user_email" />
+     
+      <textarea name="message" />
+      <input type="submit" value="Send" />
+    </form> */}
+                {/* <FormGroup className="contact__form">
+                  <Input placeholder="Your Name" type="text"  name="user_name"/>
                 </FormGroup>
                 <FormGroup className="contact__form">
-                  <Input placeholder="Email" type="email" />
+                  <Input placeholder="Email" type="email" name="user_email" />
                 </FormGroup>
                 <FormGroup className="contact__form">
                   <textarea
                     rows="5"
                     placeholder="Message"
-                    className="textarea"
+                    className=""
+                    name="message"
                   ></textarea>
                 </FormGroup>
+                <input type="submit" value="Send" /> */}
 
-                <button className=" contact__btn" type="submit">
-                  Send Message
-                </button>
-              </Form>
+                
+            
             </Col>
 
             <Col lg="5" md="5">

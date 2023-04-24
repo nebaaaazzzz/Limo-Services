@@ -63,7 +63,7 @@ const About = () => {
 
       {/* <BecomeDriverSection /> */}
 
-      <section>
+      {/* <section>
         <Container>
           <Row>
             <Col lg="12" className="mb-5 text-center">
@@ -73,7 +73,7 @@ const About = () => {
             <OurMembers />
           </Row>
         </Container>
-      </section>
+      </section> */}
     </Helmet>
   );
 };

@@ -10,10 +10,10 @@ const quickLinks = [
     display: "About",
   },
 
-  {
-    path: "#",
-    display: "Privacy Policy",
-  },
+  // {
+  //   path: "#",
+  //   display: "Privacy Policy",
+  // },
 
   {
     path: "/cars",
@@ -43,7 +43,9 @@ const Footer = () => {
                 <Link to="/home" className=" d-flex align-items-center gap-2">
                   <i class="ri-car-line"></i>
                   <span>
-                  Limousine<br />Service
+                    Seattle
+                    <br />
+                    Limo
                   </span>
                 </Link>
               </h1>
@@ -72,15 +74,15 @@ const Footer = () => {
           <Col lg="3" md="4" sm="6">
             <div className="mb-4">
               <h5 className="footer__link-title mb-4">Head Office</h5>
-             
-              <p className="office__info">Area the company works </p>    { /*123 Zindabazar, Sylhet, Bangladesh*/ }
+              <p className="office__info">Area the company works </p>{" "}
+              {/*123 Zindabazar, Sylhet, Bangladesh*/}
               <p className="office__info">Phone:</p>
               <p className="office__info">Email:</p>
               <p className="office__info">Office Time:</p>
             </div>
           </Col>
 
-          <Col lg="3" md="4" sm="12">
+          {/* <Col lg="3" md="4" sm="12">
             <div className="mb-4">
               <h5 className="footer__link-title">Newsletter</h5>
               <p className="section__description">Subscribe our newsletter</p>
@@ -91,13 +93,13 @@ const Footer = () => {
                 </span>
               </div>
             </div>
-          </Col>
+          </Col> */}
 
           <Col lg="12">
             <div className="footer__bottom">
               <p className="section__description d-flex align-items-center justify-content-center gap-1 pt-4">
-                <i class="ri-copyright-line"></i>Copyright {year}, Developed by Fejlesztő technology
-                . All rights reserved.
+                <i class="ri-copyright-line"></i>Copyright {year}, Developed by
+                Fejlesztő technology . All rights reserved.
               </p>
             </div>
           </Col>
