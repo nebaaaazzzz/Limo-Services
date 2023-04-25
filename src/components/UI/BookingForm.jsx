@@ -63,7 +63,7 @@ const BookingForm = () => {
         <textarea
           rows={5}
           type="textarea"
-          className="textarea"
+          className="text_area"
           placeholder="Write"
         ></textarea>
       </FormGroup>
