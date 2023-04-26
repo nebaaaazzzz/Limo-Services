@@ -1,69 +1,146 @@
 import React from "react";
 import "../../styles/booking-form.css";
 import { Form, FormGroup } from "reactstrap";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+import { postReservation } from "../../api";
+import { useMutation } from "react-query";
+import { toast } from "react-toastify";
 
-const BookingForm = () => {
-  const submitHandler = (event) => {
-    event.preventDefault();
+const schema = yup
+  .object({
+    firstName: yup.string().required(),
+    lastName: yup.string().required(),
+    email: yup.string().required().email(),
+    phoneNumber: yup.string().required(),
+    fromAddress: yup.string().required(),
+    toAddress: yup.string().required(),
+    personCount: yup.number().required(),
+    luggageCount: yup.number().required(),
+    date: yup.date().required(),
+    description: yup.string(),
+    time: yup.string().required(),
+  })
+  .required();
+const BookingForm = ({ id }) => {
+  const mutation = useMutation("post-reservation", postReservation);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+  const submitHandler = (data) => {
+    const dataClone = { ...data };
+    const time = data.time.split(":");
+    delete dataClone.date;
+    delete dataClone.time;
+    mutation.mutate({
+      ...dataClone,
+      journeyDate: new Date(new Date(data.date).setHours(time[0], time[1])),
+      vehicleId: id,
+    });
   };
+  if (mutation.isSuccess) {
+    toast("Reservation Successful", { type: "success" });
+  }
+  if (mutation.isLoading) {
+    return <p>loading</p>;
+  }
   return (
-    <Form onSubmit={submitHandler}>
+    <Form onSubmit={handleSubmit(submitHandler)}>
       <FormGroup className="booking__form d-inline-block me-4 mb-4">
-        <input type="text" placeholder="First Name" />
-      </FormGroup>
-      <FormGroup className="booking__form d-inline-block ms-1 mb-4">
-        <input type="text" placeholder="Last Name" />
-      </FormGroup>
-
-      <FormGroup className="booking__form d-inline-block me-4 mb-4">
-        <input type="email" placeholder="Email" />
-      </FormGroup>
-      <FormGroup className="booking__form d-inline-block ms-1 mb-4">
-        <input type="tel" placeholder="Phone Number" />
-      </FormGroup>
-
-      <FormGroup className="booking__form d-inline-block me-4 mb-4">
-        <input type="text" placeholder="From Address" />
-      </FormGroup>
-      <FormGroup className="booking__form d-inline-block ms-1 mb-4">
-        <input type="text" placeholder="To Address" />
-      </FormGroup>
-
-      <FormGroup className="booking__form d-inline-block me-4 mb-4">
-        <select name="" id="">
-          <option value="1 person">1 Person</option>
-          <option value="2 person">2 Person</option>
-          <option value="3 person">3 Person</option>
-          <option value="4 person">4 Person</option>
-          <option value="5+ person">5+ Person</option>
-        </select>
-      </FormGroup>
-      <FormGroup className="booking__form d-inline-block ms-1 mb-4">
-        <select name="" id="">
-          <option value="1 luggage">1 luggage</option>
-          <option value="2 luggage">2 luggage</option>
-          <option value="3 luggage">3 luggage</option>
-          <option value="4 luggage">4 luggage</option>
-          <option value="5+ luggage">5+ luggage</option>
-        </select>
-      </FormGroup>
-
-      <FormGroup className="booking__form d-inline-block me-4 mb-4">
-        <input type="date" placeholder="Journey Date" />
+        <input
+          {...register("firstName")}
+          type="text"
+          className={` ${errors.firstName ? "border-danger" : ""}`}
+          placeholder="First Name"
+        />
       </FormGroup>
       <FormGroup className="booking__form d-inline-block ms-1 mb-4">
         <input
+          {...register("lastName")}
+          type="text"
+          className={` ${errors.lastName ? "border-danger" : ""}`}
+          placeholder="Last Name"
+        />
+      </FormGroup>
+
+      <FormGroup className="booking__form d-inline-block me-4 mb-4">
+        <input
+          className={` ${errors.email ? "border-danger" : ""}`}
+          {...register("email")}
+          type="email"
+          placeholder="Email"
+        />
+      </FormGroup>
+      <FormGroup className="booking__form d-inline-block ms-1 mb-4">
+        <input
+          className={` ${errors.phoneNumber ? "border-danger" : ""}`}
+          {...register("phoneNumber")}
+          type="tel"
+          placeholder="Phone Number"
+        />
+      </FormGroup>
+
+      <FormGroup className="booking__form d-inline-block me-4 mb-4">
+        <input
+          className={` ${errors.fromAddress ? "border-danger" : ""}`}
+          {...register("fromAddress")}
+          type="text"
+          placeholder="from address"
+        />
+      </FormGroup>
+      <FormGroup className="booking__form d-inline-block ms-1 mb-4">
+        <input
+          type="text"
+          className={` ${errors.toAddress ? "border-danger" : ""}`}
+          {...register("toAddress")}
+          placeholder="to address"
+        />
+      </FormGroup>
+      <FormGroup className="booking__form d-inline-block me-4 mb-4">
+        <input
+          className={` ${errors.personCount ? "border-danger" : ""}`}
+          {...register("personCount")}
+          type="text"
+          placeholder="person count"
+        />
+      </FormGroup>
+      <FormGroup className="booking__form d-inline-block ms-1 mb-4">
+        <input
+          className={` ${errors.luggageCount ? "border-danger" : ""}`}
+          type="text"
+          {...register("luggageCount")}
+          placeholder="luggage count"
+        />
+      </FormGroup>
+
+      <FormGroup className="booking__form d-inline-block me-4 mb-4">
+        <input
+          className={` ${errors.date ? "border-danger" : ""}`}
+          type="date"
+          {...register("date")}
+          placeholder="Journey Date"
+        />
+      </FormGroup>
+      <FormGroup className="booking__form d-inline-block ms-1 mb-4">
+        <input
+          className={`time__picker ${errors.time ? "border-danger" : ""}`}
           type="time"
+          {...register("time")}
           placeholder="Journey Time"
-          className="time__picker"
         />
       </FormGroup>
 
       <FormGroup>
         <textarea
           rows={5}
+          className={`text_area ${errors.description ? " border-danger" : ""}`}
+          {...register("description")}
           type="textarea"
-          className="text_area"
           placeholder="Write"
         ></textarea>
       </FormGroup>
