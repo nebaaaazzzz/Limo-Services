@@ -45,6 +45,7 @@ const BookingForm = ({ id }) => {
   };
   if (mutation.isSuccess) {
     toast("Reservation Successful", { type: "success" });
+    mutation.reset();
   }
   if (mutation.isLoading) {
     return (
