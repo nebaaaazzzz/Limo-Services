@@ -28,6 +28,7 @@ const BookingForm = ({ id }) => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
@@ -46,6 +47,7 @@ const BookingForm = ({ id }) => {
   if (mutation.isSuccess) {
     toast("Reservation Successful", { type: "success" });
     mutation.reset();
+    reset();
   }
   if (mutation.isLoading) {
     return (
