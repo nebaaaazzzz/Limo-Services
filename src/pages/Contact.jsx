@@ -54,7 +54,6 @@ const Contact = () => {
           });
         },
         (error) => {
-          console.log(error.text);
           alert(
             "Sorry, your message could not be sent. Please try again later."
           );

@@ -6,7 +6,7 @@ import { BASE_URL } from "../../api";
 
 const CarItem = (props) => {
   //TODO ADD  SPEED AND AUTOMATIC
-  const { img, model, pricePerDay, name, automatic, speed, id } = props.item;
+  const { img, model, pricePerDay, automatic, name, speed, id } = props.item;
 
   return (
     <Col lg="4" md="4" sm="6" className="mb-5">
@@ -26,7 +26,8 @@ const CarItem = (props) => {
               <i class="ri-car-line"></i> {model}
             </span>
             <span className=" d-flex align-items-center gap-1">
-              <i class="ri-settings-2-line"></i> {automatic}
+              <i class="ri-settings-2-line"></i>{" "}
+              {automatic ? "automatic" : "manual"}
             </span>
             <span className=" d-flex align-items-center gap-1">
               <i class="ri-timer-flash-line"></i> {speed}

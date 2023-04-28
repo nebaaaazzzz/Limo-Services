@@ -23,7 +23,25 @@ const BlogDetails = () => {
     window.scrollTo(0, 0);
   }, [data]);
   if (isError) return null;
-  if (isLoading) return <p>loading</p>;
+  if (isLoading)
+    return (
+      <div
+        style={{
+          display: "flex",
+          width: "100%",
+          aspectRatio: "3 / 1",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <div
+          className="spinner-border spinner-border-lg text-primary"
+          role="status"
+        >
+          <span className="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    );
   return (
     <Helmet title={data.title}>
       <section>
@@ -31,7 +49,12 @@ const BlogDetails = () => {
           <Row>
             <Col lg="8" md="8">
               <div className="blog__details">
-                <img src={BASE_URL + data.img} alt="" className="w-100" />
+                <img
+                  src={BASE_URL + data.img}
+                  alt=""
+                  className="w-100"
+                  style={{ aspectRatio: "1/1", objectFit: "contain" }}
+                />
                 <h2 className="section__title mt-4">{data.title}</h2>
 
                 <div className="blog__publisher d-flex align-items-center gap-4 mb-4">

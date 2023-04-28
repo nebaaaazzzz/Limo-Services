@@ -18,7 +18,25 @@ const CarDetails = () => {
     window.scrollTo(0, 0);
   }, [data]);
   if (isError) return null;
-  if (isLoading) return <p>loading</p>;
+  if (isLoading)
+    return (
+      <div
+        style={{
+          display: "flex",
+          width: "100%",
+          aspectRatio: "3 / 1",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <div
+          className="spinner-border spinner-border-lg text-primary"
+          role="status"
+        >
+          <span className="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    );
 
   return (
     <Helmet title={data.name}>
@@ -26,7 +44,12 @@ const CarDetails = () => {
         <Container>
           <Row>
             <Col lg="6">
-              <img src={BASE_URL + data.img} alt="" className="w-100" />
+              <img
+                src={BASE_URL + data.img}
+                style={{ aspectRatio: "1/1", objectFit: "contain" }}
+                alt=""
+                className="w-100"
+              />
             </Col>
 
             <Col lg="6">
@@ -58,7 +81,7 @@ const CarDetails = () => {
                       class="ri-settings-2-line"
                       style={{ color: "#f9a826" }}
                     ></i>{" "}
-                    {data.automatic}
+                    {data.automatic ? "automatic" : "manual"}
                   </span>
 
                   <span className=" d-flex align-items-center gap-1 section__description">
@@ -74,26 +97,24 @@ const CarDetails = () => {
                   className=" d-flex align-items-center mt-3"
                   style={{ columnGap: "2.8rem" }}
                 >
-                  <span className=" d-flex align-items-center gap-1 section__description">
-                    <i class="ri-map-pin-line" style={{ color: "#f9a826" }}></i>{" "}
-                    {data.gps}
-                  </span>
-
-                  <span className=" d-flex align-items-center gap-1 section__description">
-                    <i
-                      class="ri-wheelchair-line"
-                      style={{ color: "#f9a826" }}
-                    ></i>{" "}
-                    {data.seatType}
-                  </span>
-
-                  <span className=" d-flex align-items-center gap-1 section__description">
-                    <i
-                      class="ri-building-2-line"
-                      style={{ color: "#f9a826" }}
-                    ></i>{" "}
-                    {data.brand}
-                  </span>
+                  {data.gps && (
+                    <span className=" d-flex align-items-center gap-1 section__description">
+                      <i
+                        class="ri-map-pin-line"
+                        style={{ color: "#f9a826" }}
+                      ></i>{" "}
+                      {"gps navigation"}
+                    </span>
+                  )}
+                  {data.heatedSeat && (
+                    <span className=" d-flex align-items-center gap-1 section__description">
+                      <i
+                        class="ri-wheelchair-line"
+                        style={{ color: "#f9a826" }}
+                      ></i>{" "}
+                      {"Heated Seat"}
+                    </span>
+                  )}
                 </div>
               </div>
             </Col>
