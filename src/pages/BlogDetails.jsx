@@ -9,44 +9,75 @@ import { Link } from "react-router-dom";
 import commentImg from "../assets/all-images/ava-1.jpg";
 
 import "../styles/blog-details.css";
+import { useQuery } from "react-query";
+import { BASE_URL, getBlog } from "../api.js";
+import moment from "moment";
 
 const BlogDetails = () => {
   const { slug } = useParams();
-  const blog = blogData.find((blog) => blog.title === slug);
-
+  // const blog = blogData.find((blog) => blog.title === slug);
+  const { data, isLoading, isError } = useQuery(["blog", slug], () =>
+    getBlog(slug)
+  );
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [blog]);
-
+  }, [data]);
+  if (isError) return null;
+  if (isLoading)
+    return (
+      <div
+        style={{
+          display: "flex",
+          width: "100%",
+          aspectRatio: "3 / 1",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <div
+          className="spinner-border spinner-border-lg text-primary"
+          role="status"
+        >
+          <span className="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    );
   return (
-    <Helmet title={blog.title}>
+    <Helmet title={data.title}>
       <section>
         <Container>
           <Row>
             <Col lg="8" md="8">
               <div className="blog__details">
-                <img src={blog.imgUrl} alt="" className="w-100" />
-                <h2 className="section__title mt-4">{blog.title}</h2>
+                <img
+                  src={BASE_URL + data.img}
+                  alt=""
+                  className="w-100"
+                  style={{ aspectRatio: "1/1", objectFit: "contain" }}
+                />
+                <h2 className="section__title mt-4">{data.title}</h2>
 
                 <div className="blog__publisher d-flex align-items-center gap-4 mb-4">
                   <span className="blog__author">
-                    <i class="ri-user-line"></i> {blog.author}
+                    <i class="ri-user-line"></i> {data?.user?.firstName}
                   </span>
 
                   <span className=" d-flex align-items-center gap-1 section__description">
-                    <i class="ri-calendar-line"></i> {blog.date}
+                    <i class="ri-calendar-line"></i>{" "}
+                    {moment(data.createdAt).format("D MMM , YYYY")}
                   </span>
 
                   <span className=" d-flex align-items-center gap-1 section__description">
-                    <i class="ri-time-line"></i> {blog.time}
+                    <i class="ri-time-line"></i>{" "}
+                    {moment(data.createdAt).format("HH : mm a")}
                   </span>
                 </div>
 
-                <p className="section__description">{blog.description}</p>
+                <p className="section__description">{data.content}</p>
                 <h6 className="ps-5 fw-normal">
-                  <blockquote className="fs-4">{blog.quote}</blockquote>
+                  <blockquote className="fs-4">{data.quote}</blockquote>
                 </h6>
-                <p className="section__description">{blog.description}</p>
+                <p className="section__description">{data.content}</p>
               </div>
 
               <div className="comment__list mt-5">
@@ -96,22 +127,6 @@ const BlogDetails = () => {
                   </Form>
                 </div>
               </div>
-            </Col>
-
-            <Col lg="4" md="4">
-              <div className="recent__post mb-4">
-                <h5 className=" fw-bold">Recent Posts</h5>
-              </div>
-              {blogData.map((item) => (
-                <div className="recent__blog-post mb-4" key={item.id}>
-                  <div className="recent__blog-item d-flex gap-3">
-                    <img src={item.imgUrl} alt="" className="w-25 rounded-2" />
-                    <h6>
-                      <Link to={`/blogs/${item.title}`}>{blog.title}</Link>
-                    </h6>
-                  </div>
-                </div>
-              ))}
             </Col>
           </Row>
         </Container>

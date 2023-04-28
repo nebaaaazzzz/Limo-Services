@@ -10,7 +10,6 @@ const quickLinks = [
     display: "About",
   },
 
-
   {
     path: "/cars",
     display: "Car Listing",
@@ -27,8 +26,6 @@ const quickLinks = [
 ];
 
 const Footer = () => {
-  const date = new Date();
-  const year = date.getFullYear();
   return (
     <footer className="footer">
       <Container>
@@ -71,14 +68,11 @@ const Footer = () => {
             <div className="mb-4">
               <h5 className="footer__link-title mb-4">Head Office</h5>
               <p className="office__info">Area the company works </p>{" "}
-            
               <p className="office__info">Phone:</p>
               <p className="office__info">Email:</p>
               <p className="office__info">Office Time:</p>
             </div>
           </Col>
-
-         
 
           <Col lg="12">
             <div className="footer__bottom">
