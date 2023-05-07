@@ -86,7 +86,7 @@ const BlogDetails = () => {
                 <p className="section__description">{data.content}</p>
               </div>
 
-              <div className="comment__list mt-5">
+              {/* <div className="comment__list mt-5">
                 <h4 className="mb-5">Comments</h4>
                 {commentData?.pages?.map((comments) => {
                   return comments.map((comment) => {
@@ -103,8 +103,8 @@ const BlogDetails = () => {
                   </button>
                 )}
                 {/* =============== comment form ============ */}
-                <CommentForm id={data.id} />
-              </div>
+                {/* <CommentForm id={data.id} />
+              </div> */} *
             </Col>
           </Row>
         </Container>
