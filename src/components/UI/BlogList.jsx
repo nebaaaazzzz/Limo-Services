@@ -3,6 +3,7 @@ import { Col } from "reactstrap";
 import "../../styles/blog-item.css";
 import { Link } from "react-router-dom";
 import moment from "moment";
+import { BASE_URL, getBlog, getComments, postComment } from "../api.js";
 const BlogList = ({ blogs }) => {
   return (
     <>
@@ -32,7 +33,7 @@ const BlogItem = ({ item }) => {
           textOverflow: "ellipsis",
         }}
       >
-         <img src={imgUrl} alt="image is not loading" className="w-100" /> 
+         <img src={BASE_URL+imgUrl} alt="image is not loading" className="w-100" /> 
         <div className="blog__info p-3">
           <Link to={`/blogs/${id}`}  className="blog__title">
             {title}
