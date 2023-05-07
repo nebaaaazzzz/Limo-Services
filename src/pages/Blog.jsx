@@ -6,6 +6,7 @@ import BlogList from "../components/UI/BlogList";
 import { getBlogs } from "../api";
 import { useInView } from "react-intersection-observer";
 import { useInfiniteQuery } from "react-query";
+import Loading from "../components/Loading";
 
 const Blog = () => {
   const { ref, inView } = useInView({
@@ -39,24 +40,7 @@ const Blog = () => {
               return <BlogList blogs={vehicles} />;
             })}
           </Row>
-          {isLoading && (
-            <div
-              style={{
-                display: "flex",
-                width: "100%",
-                aspectRatio: "3 / 1",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <div
-                className="spinner-border spinner-border-lg text-primary"
-                role="status"
-              >
-                <span className="visually-hidden">Loading...</span>
-              </div>
-            </div>
-          )}
+          {isLoading && <Loading />}
           <div ref={ref}></div>
         </Container>
       </section>

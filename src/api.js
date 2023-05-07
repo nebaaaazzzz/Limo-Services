@@ -26,3 +26,13 @@ export async function postReservation(body) {
   const { data } = await axios.post(`/book`, body);
   return data;
 }
+export async function postComment(body) {
+  const { data } = await axios.post(`/comment`, body);
+  return data;
+}
+export async function getComments(blogId, page = 1, limit = 5) {
+  const { data } = await axios.get(
+    `/comment/${blogId}?page=${page}&limit=${limit} `
+  );
+  return data;
+}
