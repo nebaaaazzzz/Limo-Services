@@ -15,7 +15,7 @@ const BlogList = ({ blogs }) => {
 
 const BlogItem = ({ item }) => {
   const {
-    imgUrl,
+    img,
     title,
     user: { firstName },
     createdAt,
@@ -23,9 +23,7 @@ const BlogItem = ({ item }) => {
     id,
   } = item;
   console.log(item);
-  // did you start server? Yeah i did
-  // eshi mn ahun share your screen pls
-  // ante jezba
+  
   return (
     <Col lg="4" md="6" sm="6" className="mb-5">
       <div
@@ -35,9 +33,8 @@ const BlogItem = ({ item }) => {
           textOverflow: "ellipsis",
         }}
       >   
-      {/* oh bro type in comment er woo ahun wede sera lol */}
-      {/* am in bro say hi if you here  */}
-         <img src={imgUrl} alt="image is not loading" className="w-100" /> 
+      
+         <img src={`https://limo-backend.onrender.com/${img}`} alt="image is not loading" className="w-100" /> 
         <div className="blog__info p-3">
           <Link to={`/blogs/${id}`}  className="blog__title">
             {title}
