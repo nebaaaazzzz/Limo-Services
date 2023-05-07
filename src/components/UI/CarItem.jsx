@@ -34,9 +34,17 @@ const CarItem = (props) => {
             </span>
           </div>
 
-          <button className=" w-50 car__item-btn car__btn-details" Link to={`/cars/${id}`}>
-            <Link to={`/cars/${id}`}>Book Now</Link>
-          </button>
+          <button
+             className="w-50 car__item-btn car__btn-details"
+             onClick={(e) => {
+             e.preventDefault();
+             window.location.href = `/cars/${id}`;
+            }}>
+              <Link to={`/cars/${id}`} className="car__link">
+                Book Now
+              </Link>
+            </button>
+
         </div>
       </div>
     </Col>
