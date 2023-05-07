@@ -32,9 +32,9 @@ const BlogItem = ({ item }) => {
           textOverflow: "ellipsis",
         }}
       >
-         <img src={imgUrl} alt="" className="w-100" /> 
+         <img src={imgUrl} alt="image is not loading" className="w-100" /> 
         <div className="blog__info p-3">
-          <Link to={`/blogs/${title}`} className="blog__title">
+          <Link to={`/blogs/${id}`} className="blog__title">
             {title}
           </Link>
           <p className="section__description mt-3">
