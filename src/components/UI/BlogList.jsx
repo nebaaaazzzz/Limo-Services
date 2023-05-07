@@ -32,7 +32,7 @@ const BlogItem = ({ item }) => {
           textOverflow: "ellipsis",
         }}
       >
-        {/* <img src={imgUrl} alt="" className="w-100" /> */}
+         <img src={imgUrl} alt="" className="w-100" /> 
         <div className="blog__info p-3">
           <Link to={`/blogs/${title}`} className="blog__title">
             {title}
