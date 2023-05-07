@@ -3,7 +3,6 @@ import { Col } from "reactstrap";
 import "../../styles/blog-item.css";
 import { Link } from "react-router-dom";
 import moment from "moment";
-import { BASE_URL, getBlog, getComments, postComment } from "../api.js";
 const BlogList = ({ blogs }) => {
   return (
     <>
@@ -23,7 +22,10 @@ const BlogItem = ({ item }) => {
     content,
     id,
   } = item;
-
+  console.log(item);
+  // did you start server? Yeah i did
+  // eshi mn ahun share your screen pls
+  // ante jezba
   return (
     <Col lg="4" md="6" sm="6" className="mb-5">
       <div
@@ -32,8 +34,10 @@ const BlogItem = ({ item }) => {
           wordBreak: "break-word",
           textOverflow: "ellipsis",
         }}
-      >
-         <img src={BASE_URL+imgUrl} alt="image is not loading" className="w-100" /> 
+      >   
+      {/* oh bro type in comment er woo ahun wede sera lol */}
+      {/* am in bro say hi if you here  */}
+         <img src={imgUrl} alt="image is not loading" className="w-100" /> 
         <div className="blog__info p-3">
           <Link to={`/blogs/${id}`}  className="blog__title">
             {title}
