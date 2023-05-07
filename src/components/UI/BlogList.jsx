@@ -22,8 +22,6 @@ const BlogItem = ({ item }) => {
     content,
     id,
   } = item;
-  console.log(item);
-  
   return (
     <Col lg="4" md="6" sm="6" className="mb-5">
       <div
@@ -33,21 +31,7 @@ const BlogItem = ({ item }) => {
           textOverflow: "ellipsis",
         }}
       >   
-      {/* ere benatih terminal  yetal meche req aldersegnm*/}
-      {/* bura inspect adergew geba ena eski */}
-      {/* bro terminal kefekedikilign erase ekeftewalew I did eko*/}
-      {/* sima tachi lay live share emil yitayical? yeah */}
-      {/* tekeftuall  yeah local host gn backend kke ene computer yelem ayseram*/}
-      {/* share server emil yitaikal tachi lay no  */}
-      {/* file yalebet ale adele besu estrate mecheresha  .... is it share server or live share  */}
-        {/* sima press controle + shift + P */}
-        {/* type share server I did */}
-        {/* 3000 type laderg 3000  awo then enter i did that*/} 
-        {/* gobez yekecheh*/}
-        {/* back endun kifetew ...algebagnm andualm */}
-        {/* projectun */}
-        {/* console lai yemtawn ayehew  andualm*/}
-        {/* push arge eshi */}
+     
          <img src={`https://limo-backend.onrender.com/${img}`} alt="image is not loadin" className="w-100" /> 
         <div className="blog__info p-3">
           <Link to={`/blogs/${id}`}  className="blog__title">
