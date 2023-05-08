@@ -33,7 +33,7 @@ const BlogItem = ({ item }) => {
         }}
       >   
      
-         <img src={`https://limo-backend.onrender.com/${img}`} alt="image is not loadin" className="w-100" /> 
+         <img src={img} alt="image is not loadin" className="w-100" /> 
         <div className="blog__info p-3">
           <Link to={`/blogs/${id}`}  className="blog__title">
             {title}
