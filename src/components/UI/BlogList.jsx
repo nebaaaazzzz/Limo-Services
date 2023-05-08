@@ -22,7 +22,7 @@ const BlogItem = ({ item }) => {
     content,
     id,
   } = item;
-  console.log(item);
+  
   return (
     <Col lg="4" md="6" sm="6" className="mb-5">
       <div
