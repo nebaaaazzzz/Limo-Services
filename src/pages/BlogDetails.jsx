@@ -60,7 +60,7 @@ const BlogDetails = () => {
             <Col lg="8" md="8">
               <div className="blog__details">
                 <img
-                  src={BASE_URL + data.img}
+                  src={data.img}
                   alt=""
                   className="w-100"
                   style={{ aspectRatio: "1/1", objectFit: "contain" }}
