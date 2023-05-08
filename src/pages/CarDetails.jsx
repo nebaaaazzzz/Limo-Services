@@ -45,7 +45,7 @@ const CarDetails = () => {
           <Row>
             <Col lg="6">
               <img
-                src={BASE_URL + data.img}
+                src={data.img}
                 style={{ aspectRatio: "1/1", objectFit: "contain" }}
                 alt=""
                 className="w-100"
