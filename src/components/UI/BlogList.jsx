@@ -3,6 +3,7 @@ import { Col } from "reactstrap";
 import "../../styles/blog-item.css";
 import { Link } from "react-router-dom";
 import moment from "moment";
+
 const BlogList = ({ blogs }) => {
   return (
     <>
@@ -14,29 +15,14 @@ const BlogList = ({ blogs }) => {
 };
 
 const BlogItem = ({ item }) => {
-  const {
-    img,
-    title,
-    user: { firstName },
-    createdAt,
-    content,
-    id,
-  } = item;
-  
+  const { img, title, user: { firstName }, createdAt, content, id } = item;
+
   return (
     <Col lg="4" md="6" sm="6" className="mb-5">
-      <div
-        className="blog__item"
-        style={{
-          wordBreak: "break-word",
-          textOverflow: "ellipsis",
-        }}
-      >   
-     
-        
+      <div className="blog__item">
         <div className="blog__info">
-        <img src={img} alt="image is not loadin" className="w-100" /> 
-          <Link to={`/blogs/${id}`}  className="blog__title">
+          <img src={img} alt="image is not loading" className="w-100" />
+          <Link to={`/blogs/${id}`} className="blog__title">
             {title}
           </Link>
           <p className="section__description mt-3">
@@ -49,18 +35,17 @@ const BlogItem = ({ item }) => {
 
           <div className="blog__time pt-3 mt-3 d-flex align-items-center justify-content-between">
             <span className="blog__author">
-              <i class="ri-user-line"></i> {firstName}
+              <i className="ri-user-line"></i> {firstName}
             </span>
 
-            <div className=" d-flex align-items-center gap-3">
-              <span className=" d-flex align-items-center gap-1 section__description">
-                <i class="ri-calendar-line"></i>{" "}
+            <div className="d-flex align-items-center gap-3">
+              <span className="d-flex align-items-center gap-1 section__description">
+                <i className="ri-calendar-line"></i>{" "}
                 {moment(createdAt).format("D MMM , YYYY")}
-                {/* 19 april, 2023 */}
               </span>
 
-              <span className=" d-flex align-items-center gap-1 section__description">
-                <i class="ri-time-line"></i>{" "}
+              <span className="d-flex align-items-center gap-1 section__description">
+                <i className="ri-time-line"></i>{" "}
                 {moment(createdAt).format("HH : mm a")}
               </span>
             </div>
