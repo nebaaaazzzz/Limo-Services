@@ -24,7 +24,7 @@ const BlogItem = ({ item }) => {
   } = item;
   
   return (
-    //make the blog item same height and width
+    
     
     <Col lg="4" md="6" sm="6" className="mb-5">
       <div

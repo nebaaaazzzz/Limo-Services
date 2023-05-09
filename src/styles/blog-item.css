@@ -1,12 +1,10 @@
 .blog__item {
   border: 1px solid #7c8a972e;
-  height: 350px; /* Set the height */
-  width: 350px; /* Set the width */
+  height: 350px; 
+  width: 350px; 
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-  word-break: break-word;
-  text-overflow: ellipsis;
+
 }
 
 
