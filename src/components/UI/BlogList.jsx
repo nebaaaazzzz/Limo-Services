@@ -22,12 +22,8 @@ const BlogItem = ({ item }) => {
     content,
     id,
   } = item;
-
-  console.log(item);
   
   return (
-    
-    
     <Col lg="4" md="6" sm="6" className="mb-5">
       <div
         className="blog__item"
@@ -37,9 +33,8 @@ const BlogItem = ({ item }) => {
         }}
       >   
      
-        
-        <div className="blog__info">
-        <img src={img} alt="image is not loadin" className="w-100" /> 
+         <img src={img} alt="image is not loadin" className="w-100" /> 
+        <div className="blog__info p-3">
           <Link to={`/blogs/${id}`}  className="blog__title">
             {title}
           </Link>
@@ -60,7 +55,7 @@ const BlogItem = ({ item }) => {
               <span className=" d-flex align-items-center gap-1 section__description">
                 <i class="ri-calendar-line"></i>{" "}
                 {moment(createdAt).format("D MMM , YYYY")}
-             
+                {/* 19 april, 2023 */}
               </span>
 
               <span className=" d-flex align-items-center gap-1 section__description">
