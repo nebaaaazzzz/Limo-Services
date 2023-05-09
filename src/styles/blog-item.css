@@ -1,6 +1,5 @@
 .blog__item {
   border: 1px solid #7c8a972e;
-  height: 450px; /* Adjust the fixed height according to your needs */
   display: flex;
   flex-direction: column;
 }
