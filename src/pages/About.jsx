@@ -30,17 +30,21 @@ const About = () => {
                 </h2>
 
                 <p className="section__description">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Eveniet veniam assumenda aperiam accusantium ex autem
-                  perferendis repellendus nostrum delectus. Nemo et dolore est
-                  tempore rem minima adipisci magni dolorum ipsam.
+                  We Are Committed To Provide Safe Ride Solutions: Prioritizing
+                  safety and comfort, our service boasts meticulously maintained
+                  vehicles, rigorously trained chauffeurs, and advanced safety
+                  features. Enjoy peace of mind knowing your journey is secure,
+                  allowing you to relax and savor the luxurious experience with
+                  confidence.
                 </p>
 
                 <p className="section__description">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Eveniet veniam assumenda aperiam accusantium ex autem
-                  perferendis repellendus nostrum delectus. Nemo et dolore est
-                  tempore rem minima adipisci magni dolorum ipsam.
+                  Our dedication to safe ride solutions is unwavering, as we
+                  consistently update and enforce safety protocols, adhere to
+                  stringent vehicle maintenance standards, and provide ongoing
+                  training for our chauffeurs. Rest assured, we prioritize your
+                  well-being, ensuring you arrive at your destination with ease
+                  and elegance.
                 </p>
 
                 <div className=" d-flex align-items-center gap-3 mt-4">
@@ -59,19 +63,6 @@ const About = () => {
         </Container>
       </section>
 
-      {/* <BecomeDriverSection /> */}
-
-      {/* <section>
-        <Container>
-          <Row>
-            <Col lg="12" className="mb-5 text-center">
-              <h6 className="section__subtitle">Experts</h6>
-              <h2 className="section__title">Our Members</h2>
-            </Col>
-            <OurMembers />
-          </Row>
-        </Container>
-      </section> */}
     </Helmet>
   );
 };

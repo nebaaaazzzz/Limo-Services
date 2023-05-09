@@ -44,10 +44,12 @@ const Footer = () => {
               </h1>
             </div>
             <p className="footer__logo-content">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Consequuntur, distinctio, itaque reiciendis ab cupiditate harum ex
-              quam veniam, omnis expedita animi quibusdam obcaecati mollitia?
-              Delectus et ad illo recusandae temporibus?
+              Discover unparalleled elegance with our premier limousine service.
+              Our commitment to top-notch service, pristine vehicles, and expert
+              chauffeurs ensures unforgettable experiences for weddings,
+              corporate events, and other special occasions. Choose us to
+              elevate your transportation experience with style and
+              sophistication.
             </p>
           </Col>
 
@@ -76,10 +78,13 @@ const Footer = () => {
 
           <Col lg="12">
             <div className="footer__bottom">
-              {/* <p className="section__description d-flex align-items-center justify-content-center gap-1 pt-4">
-                <i class="ri-copyright-line"></i>Copyright {year}, Developed by
-                Fejlesztő technology . All rights reserved.
-              </p> */}
+              <p className="section__description d-flex align-items-center justify-content-center gap-1 pt-4">
+                <i class="ri-copyright-line"></i>Copyright 2023, Developed by
+                <a href="http://fejleszto-tech.com/" target="_blank">
+                  Fejlesztő technology
+                </a>
+                . All rights reserved.
+              </p>
             </div>
           </Col>
         </Row>
