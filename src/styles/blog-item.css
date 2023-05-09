@@ -30,7 +30,7 @@
 }
 
 .blog__author {
-  color: #000d6b;
+  color: #000000;
   font-weight: 600;
 }
 
@@ -40,7 +40,7 @@
 
 .blog__title {
   text-decoration: none;
-  color: #000d6b;
+  color: #000000;
   font-size: 1.2rem;
   font-weight: 600;
   transition: 0.3s;

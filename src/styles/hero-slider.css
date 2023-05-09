@@ -42,7 +42,7 @@
 
 .reserve__btn {
   background: #fff !important;
-  color: #000d6b !important;
+  color: #000000 !important;
   border: none;
   outline: none;
 }
@@ -50,11 +50,11 @@
 .reserve__btn a {
   text-decoration: none;
   font-weight: 600;
-  color: #000d6b;
+  color: #000000;
 }
 
 .reserve__btn:hover {
-  background: #000d6b;
+  background: #000000;
   color: #fff;
 }
 
