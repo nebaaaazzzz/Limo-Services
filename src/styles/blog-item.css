@@ -3,20 +3,17 @@
   height: 450px; /* Adjust the fixed height according to your needs */
   display: flex;
   flex-direction: column;
-  position: relative;
-}
-
-.blog__info {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  display: flex;
   overflow: hidden;
   flex-direction: column;
   justify-content: space-between;
 }
+
+
 
 .blog__time {
   border-top: 1px solid #7c8a972e;
