@@ -5,12 +5,8 @@ import { Container, Row, Col } from "reactstrap";
 import Helmet from "../components/Helmet/Helmet";
 import { useParams } from "react-router-dom";
 import BookingForm from "../components/UI/BookingForm";
-<<<<<<< HEAD
-
-=======
 import { BASE_URL, getVehicle } from "../api";
 import { useQuery } from "react-query";
->>>>>>> 2c4f2bfbf58d8356f7fc5e8b4876bcf501c2c3a0
 
 const CarDetails = () => {
   const { slug } = useParams();
@@ -37,7 +33,7 @@ const CarDetails = () => {
           className="spinner-border spinner-border-lg text-primary"
           role="status"
         >
-          <span className="visually-hidden">Loading...</span>
+          <span className="visually-hidden">Loading....</span>
         </div>
       </div>
     );
