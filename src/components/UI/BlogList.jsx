@@ -22,6 +22,8 @@ const BlogItem = ({ item }) => {
     content,
     id,
   } = item;
+
+  console.log(item);
   
   return (
     
@@ -58,7 +60,7 @@ const BlogItem = ({ item }) => {
               <span className=" d-flex align-items-center gap-1 section__description">
                 <i class="ri-calendar-line"></i>{" "}
                 {moment(createdAt).format("D MMM , YYYY")}
-                {/* 19 april, 2023 */}
+             
               </span>
 
               <span className=" d-flex align-items-center gap-1 section__description">
