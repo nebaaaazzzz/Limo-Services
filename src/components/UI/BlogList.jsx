@@ -34,7 +34,7 @@ const BlogItem = ({ item }) => {
       >   
      
         
-        <div className="blog__info p-3">
+        <div className="blog__info">
         <img src={img} alt="image is not loadin" className="w-100" /> 
           <Link to={`/blogs/${id}`}  className="blog__title">
             {title}
