@@ -77,6 +77,10 @@ const Contact = () => {
                 <FormGroup className="contact__form">
                   <Input placeholder="Email" type="email" name="user_email" />
                 </FormGroup>
+
+                <FormGroup className="contact__form">
+                  <Input placeholder="Phone number" type="text" name="Phone number" />
+                </FormGroup>
                 <FormGroup className="contact__form">
                   <textarea
                     rows="5"

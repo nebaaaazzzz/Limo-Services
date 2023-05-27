@@ -1,6 +1,7 @@
 .header__top {
   padding: 10px 0px;
-  background: #000000;
+ background: #000000;
+  
   color: #fff;
 }
 
@@ -78,7 +79,7 @@
 }
 
 .header__btn {
-  background: #000000 !important;
+ background: #000000 !important;
   padding: 10px 20px;
   border: none;
   outline: none;
@@ -103,7 +104,7 @@
 
 .main__navbar {
   padding: 15px 0px;
-  background: #000000;
+ background: #000000;
 }
 
 .mobile__menu i {
