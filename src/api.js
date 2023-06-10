@@ -1,5 +1,5 @@
 import * as ax from "axios";
-export const BASE_URL = "https://limo-backend.onrender.com/";
+export const BASE_URL = "https://limo-service-bacend-3.onrender.com/";
 const axios = ax.default.create({
   baseURL: BASE_URL,
 });
@@ -19,6 +19,11 @@ export async function getBlogs(page = 1, limit = 5) {
 
 export async function getBlog(id) {
   const { data } = await axios.get(`/blog/${id}`);
+  return data;
+}
+
+export async function contactFormMail(body) {
+  const { data } = await axios.post(`/mail`, body);
   return data;
 }
 
