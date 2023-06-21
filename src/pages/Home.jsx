@@ -22,7 +22,7 @@ const Home = () => {
         <HeroSlider />
 
         <div className="hero__form">
-          <Container>
+          <Container className="yellow__thing">
             <Row className="form__row">
               <Col lg="4" md="4">
                 <div className="find__cars-left">

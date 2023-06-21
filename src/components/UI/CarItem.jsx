@@ -16,10 +16,13 @@ const CarItem = (props) => {
         </div>
 
         <div className="car__item-content mt-4">
-          <h4 className="section__title text-center">{name}</h4>
+          <h4 className="section__title text-center" >{name}</h4> 
+          
+
          
 
-          <div className="car__item-info d-flex align-items-center justify-content-between mt-3 mb-4">
+          <div className="car__item-info d-flex  justify-content-between mt-3 mb-4">
+            <h4 className="section__title text-center" >{pricePerDay}$</h4>
             
           </div>
 
@@ -33,6 +36,12 @@ const CarItem = (props) => {
                 Book Now
               </Link>
             </button>
+             
+             
+            <h4 className="section__title text-center" >{pricePerDay}</h4>
+
+             
+
 
         </div>
       </div>
