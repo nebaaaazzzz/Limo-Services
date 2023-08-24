@@ -46,7 +46,10 @@ const BookingForm = ({ id }) => {
     });
   };
   if (mutation.isSuccess) {
-    toast("Reservation Successful", { type: "success" });
+    toast(
+      "Your booking is confirmed. Our team will be in touch shortly. Thank you for choosing us!",
+      { type: "success" }
+    );
     mutation.reset();
     reset();
   }
