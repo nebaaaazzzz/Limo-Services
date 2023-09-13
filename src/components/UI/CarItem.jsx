@@ -11,8 +11,8 @@ const CarItem = (props) => {
   return (
     <Col lg="4" md="4" sm="6" className="mb-5">
       <div className="car__item">
-        <div className="car__img" style={{ minHeight: "16rem", maxHeight: "16rem" }}>
-          <img src={img} alt="" className="w-100" style={{ marginTop: "auto" }} />
+        <div className="car__img" >
+          <img src={img} alt="" className="img-fluid" style={{ marginTop: "auto" }} />
         </div>
 
         <div className="car__item-content mt-4">
