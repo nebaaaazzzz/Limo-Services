@@ -210,7 +210,7 @@
 
 /* Default min-height for sm screens */
 .image-card {
-  min-height: 8rem;
+  min-height: 6rem;
 }
 
 /* Media query for md screens (768px and above) */
