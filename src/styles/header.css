@@ -1,7 +1,7 @@
 .header__top {
   padding: 10px 0px;
- background: #000000;
-  
+  background: #000000;
+
   color: #fff;
 }
 
@@ -79,7 +79,7 @@
 }
 
 .header__btn {
- background: #000000 !important;
+  background: #000000 !important;
   padding: 10px 20px;
   border: none;
   outline: none;
@@ -104,7 +104,7 @@
 
 .main__navbar {
   padding: 15px 0px;
- background: #000000;
+  background: #000000;
 }
 
 .mobile__menu i {
@@ -153,6 +153,7 @@
 .search__box input::placeholder {
   font-size: 0.8rem;
 }
+
 .search__box span i {
   color: rgba(255, 255, 255, 0.555);
   cursor: pointer;
@@ -163,6 +164,7 @@
 }
 
 @media only screen and (max-width: 768px) {
+
   .header__top,
   .header__middle,
   .nav__right {
@@ -203,5 +205,24 @@
 
   .menu__active {
     display: block;
+  }
+}
+
+/* Default min-height for sm screens */
+.image-card {
+  min-height: 8rem;
+}
+
+/* Media query for md screens (768px and above) */
+@media (min-width: 768px) {
+  .image-card {
+    min-height: 12rem;
+  }
+}
+
+/* Media query for lg screens (992px and above) */
+@media (min-width: 992px) {
+  .image-card {
+    min-height: 16rem;
   }
 }
