@@ -1,5 +1,5 @@
 .find__cars-left {
-   background-color: #4874e3bf;
+  background-color: #4874e3bf;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -16,11 +16,11 @@
 
 
 .form {
-  
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 65px 35px;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 65px 35px;
 }
 
 
@@ -41,8 +41,8 @@
 
 .form__row {
   background: linear-gradient(rgb(249, 168, 38, 0.9), rgb(249, 168, 38, 0.9)),
-    url("../assets/all-images/toyota-offer-2.png");
-  
+    url("../assets/all-images/mercedes.jpg");
+
 }
 
 .journey__time::before {
@@ -52,7 +52,7 @@
 }
 
 .find__car-btn {
- background: #000000 !important;
+  background: #000000 !important;
   color: #fff !important;
   padding: 8px 15px;
   width: 100%;
@@ -138,11 +138,12 @@
   .hero__form {
     bottom: -250px;
   }
+
   .find__cars-left {
     background-color: #030500bf;
-   background-position: center;
-   background-repeat: no-repeat;
-   background-size: cover;
-   padding: 65px 35px;
- }
-} 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 65px 35px;
+  }
+}
