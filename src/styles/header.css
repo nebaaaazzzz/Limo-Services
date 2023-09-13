@@ -223,6 +223,6 @@
 /* Media query for lg screens (992px and above) */
 @media (min-width: 992px) {
   .image-card {
-    min-height: 14rem;
+    min-height: 12rem;
   }
 }
