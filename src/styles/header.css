@@ -216,7 +216,7 @@
 /* Media query for md screens (768px and above) */
 @media (min-width: 768px) {
   .image-card {
-    min-height: 10rem;
+    min-height: 8rem;
   }
 }
 
