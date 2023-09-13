@@ -63,9 +63,9 @@ const BlogDetails = () => {
                   src={data.img}
                   alt=""
                   className="w-100"
-                  style={{ aspectRatio: "1/1", objectFit: "contain" }}
+                  style={{ objectFit: "contain" }}
                 />
-                <h2 className="section__title mt-1">{data.title}</h2>
+                <h2 className="section__title mt-4">{data.title}</h2>
 
                 <div className="blog__publisher d-flex align-items-center gap-4 mb-4">
                   <span className="blog__author">
