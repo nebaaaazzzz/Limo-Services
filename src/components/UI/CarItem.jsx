@@ -9,39 +9,19 @@ const CarItem = (props) => {
   const { img, model, pricePerDay, automatic, name, speed, id } = props.item;
 
   return (
-    <Col lg="4" md="4" sm="6" className="mb-5" >
-      <div className="car__item">
-        <div className="car__img image-card" >
-          <img src={img} alt="" className="img-fluid" />
-        </div>
-
-        <div className="car__item-content mt-4">
-          <h4 className="section__title" >{name}</h4>
-          {/* <div className="car__item-info d-flex  justify-content-between mt-3 mb-4">
-            <h5 >Price Per Day : {pricePerDay}$</h5>
-            
-          </div> */}
-
-          <button
-            className="w-50 car__item-btn car__btn-details"
-            onClick={(e) => {
-              e.preventDefault();
-              window.location.href = `/cars/${id}`;
-            }}>
-            <Link to={`/cars/${id}`} className="car__link">
+    <>
+      <div className="col-12 col-md-4 col-lg-3">
+        <div className="card">
+          <img className="card-img-top" src={img} alt="Card image cap" />
+          <div className="card-body">
+            <h5 className="card-title">{name}</h5>
+            <Link to={`/cars/${id}`} className="btn btn-dark">
               Book Now
             </Link>
-          </button>
-
-
-
-
-
-
-
+          </div>
         </div>
       </div>
-    </Col>
+    </>
   );
 };
 

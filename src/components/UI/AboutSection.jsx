@@ -10,7 +10,7 @@ const AboutSection = ({ aboutClass }) => {
       style={
         aboutClass === "aboutPage"
           ? { marginTop: "0px" }
-          : { marginTop: "280px" }
+          : { marginTop: "20px" }
       }
     >
       <Container>
@@ -32,21 +32,21 @@ const AboutSection = ({ aboutClass }) => {
 
               <div className="about__section-item d-flex align-items-center">
                 <p className="section__description d-flex align-items-center gap-2">
-                  <i class="ri-checkbox-circle-line"></i> Luxury airport transfers.
+                  <i className="ri-checkbox-circle-line"></i> Luxury airport transfers.
                 </p>
 
                 <p className="section__description d-flex align-items-center gap-2">
-                  <i class="ri-checkbox-circle-line"></i>Corporate event transportation
+                  <i className="ri-checkbox-circle-line"></i>Corporate event transportation
                 </p>
               </div>
 
               <div className="about__section-item d-flex align-items-center">
                 <p className="section__description d-flex align-items-center gap-2">
-                  <i class="ri-checkbox-circle-line"></i> Wedding limousine services
+                  <i className="ri-checkbox-circle-line"></i> Wedding limousine services
                 </p>
 
                 <p className="section__description d-flex align-items-center gap-2">
-                  <i class="ri-checkbox-circle-line"></i> VIP and celebrity transportation
+                  <i className="ri-checkbox-circle-line"></i> VIP and celebrity transportation
                 </p>
               </div>
             </div>

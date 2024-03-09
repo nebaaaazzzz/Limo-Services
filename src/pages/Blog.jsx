@@ -25,6 +25,7 @@ const Blog = () => {
       },
     }
   );
+  // console.log(data);
   useEffect(() => {
     if (inView) {
       fetchNextPage();
@@ -36,8 +37,8 @@ const Blog = () => {
       <section>
         <Container>
           <Row>
-            {data?.pages?.map((vehicles) => {
-              return <BlogList blogs={vehicles} />;
+            {data?.pages?.map((blogs, index) => {
+              return <BlogList blogs={blogs} key={index} />;
             })}
           </Row>
           {isLoading && <Loading />}

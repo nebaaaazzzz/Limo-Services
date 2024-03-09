@@ -69,7 +69,7 @@ section {
 
 .btn {
   padding: 7px 15px;
- background: #000000;
+  background: #000000;
   color: #fff;
   border: none;
   outline: none;
@@ -94,4 +94,12 @@ section {
   .section__subtitle {
     font-size: 1.1rem;
   }
+}
+
+/* ======== end pre-define css =========
+   border with some shadow */
+.single__blog__sidebar {
+  border: 1px solid #7c8a9736;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }

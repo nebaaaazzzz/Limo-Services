@@ -22,7 +22,7 @@ const BlogItem = ({ item }) => {
     content,
     id,
   } = item;
-  
+
   return (
     <Col lg="4" md="6" sm="6" className="mb-5">
       <div
@@ -31,35 +31,35 @@ const BlogItem = ({ item }) => {
           wordBreak: "break-word",
           textOverflow: "ellipsis",
         }}
-      >   
-     
-         <img src={img} alt="image is not loadin" className="w-100" /> 
-        <div className="blog__info p-3">
-          <Link to={`/blogs/${id}`}  className="blog__title">
+      >
+
+        <img src={img} alt="image is not loadin" className="w-100" />
+        <div className="blog__info p-3 d-flex flex-column justify-content-center ">
+          <Link to={`/blogs/${id}`} className="blog__title">
             {title}
           </Link>
           <p className="section__description mt-3">
             {content.length > 100 ? content.substr(0, 100) : content}
           </p>
 
-          <Link to={`/blogs/${id}`} className="read__more">
+          <Link to={`/blogs/${id}`} className="read__more ">
             Read More
           </Link>
 
           <div className="blog__time pt-3 mt-3 d-flex align-items-center justify-content-between">
             <span className="blog__author">
-              <i class="ri-user-line"></i> {firstName}
+              <i className="ri-user-line"></i> {firstName}
             </span>
 
             <div className=" d-flex align-items-center gap-3">
               <span className=" d-flex align-items-center gap-1 section__description">
-                <i class="ri-calendar-line"></i>{" "}
+                <i className="ri-calendar-line"></i>{" "}
                 {moment(createdAt).format("D MMM , YYYY")}
                 {/* 19 april, 2023 */}
               </span>
 
               <span className=" d-flex align-items-center gap-1 section__description">
-                <i class="ri-time-line"></i>{" "}
+                <i className="ri-time-line"></i>{" "}
                 {moment(createdAt).format("HH : mm a")}
               </span>
             </div>

@@ -29,12 +29,12 @@ const Footer = () => {
   return (
     <footer className="footer">
       <Container>
-        <Row>
-          <Col lg="4" md="4" sm="12">
-            <div className="logo footer__logo">
+        <Row className="justify-content-lg-around justify-content-center text-center text-lg-start">
+          <Col lg="4" md="6" sm="12" >
+            <div className="logo footer__logo ">
               <h1>
                 <Link to="/home" className=" d-flex align-items-center gap-2">
-                  <i class="ri-car-line"></i>
+                  <i className="ri-car-line"></i>
                   <span>
                     ABC
                     <br />
@@ -43,7 +43,7 @@ const Footer = () => {
                 </Link>
               </h1>
             </div>
-            <p className="footer__logo-content">
+            <p className="footer__logo-content text-start">
               Discover unparalleled elegance with our premier limousine service.
               Our commitment to top-notch service, pristine vehicles, and expert
               chauffeurs ensures unforgettable experiences for weddings,
@@ -53,7 +53,7 @@ const Footer = () => {
             </p>
           </Col>
 
-          <Col lg="2" md="4" sm="6">
+          <Col lg="2" md="3" sm="12">
             <div className="mb-4">
               <h5 className="footer__link-title">Quick Links</h5>
               <ListGroup>
@@ -66,20 +66,21 @@ const Footer = () => {
             </div>
           </Col>
 
-          <Col lg="3" md="4" sm="6">
+          <Col lg="3" md="3" sm="12">
             <div className="mb-4">
               <h5 className="footer__link-title mb-4">Head Office</h5>
-              <p className="office__info">Area the company works </p>{" "}
-              <p className="office__info">Phone:</p>
-              <p className="office__info">Email:</p>
-              <p className="office__info">Office Time:</p>
+              <p className="office__info">Area the company works: 111 W 11th St Ste 234
+                Beverly Hills, LA 90209 </p>{" "}
+              <p className="office__info">Phone: +1 (206) 793 2186</p>
+              <p className="office__info">Email: <a href="mailto:info@abclimo.com" className="text-decoration-none">{" "} info@abclimo.com</a></p>
+              <p className="office__info">Office Time: 12 AM – 12 AM</p>
             </div>
           </Col>
 
           <Col lg="12">
             <div className="footer__bottom">
               <p className="section__description d-flex align-items-center justify-content-center gap-1 pt-4">
-                <i class="ri-copyright-line"></i>Copyright 2023, Developed by
+                <i className="ri-copyright-line"></i>Copyright 2023, Developed by
                 <a href="http://fejleszto-tech.com/" target="_blank">
                   Fejlesztő technology
                 </a>

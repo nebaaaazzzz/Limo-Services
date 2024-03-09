@@ -1,29 +1,33 @@
 import React from "react";
-import { Col } from "reactstrap";
 import "../../styles/services-list.css";
-import servicesData from "../../assets/data/serviceData";
+import { Link } from "react-router-dom";
 
-const ServicesList = () => {
+const ServicesList = (props) => {
+  // change service data to data from database
+  // console.log(props);
   return (
-    <>
-      {servicesData.map((item) => (
+    <div className="row justify-content-around">
+      {props.services && props.services.map((item) => (
         <ServiceItem item={item} key={item.id} />
       ))}
-    </>
+    </div>
   );
 };
 
 const ServiceItem = ({ item }) => (
-  <Col lg="4" md="4" sm="6" className="mb-3">
-    <div className="service__item">
-      <span className="mb-3 d-inline-block">
-        <i class={item.icon} />
-      </span>
+  <Link to={`/services/${item.id}`} className="text-decoration-none col-12 col-md-4 col-lg-3 mb-2 ">
+    <div className="card" >
+      <img className="card-img-top" src={item.img} alt="Card image cap" />
+      <div className="card-body">
 
-      <h6>{item.title}</h6>
-      <p className="section__description">{item.desc}</p>
+
+        <h5 className="card-title blog__title" >{item.title}</h5>
+        <button className="btn btn-outline-dark col-12 d-flex justify-content-center align-items-center">
+          Details {" "}  <i className="ri-arrow-right-s-fill px-2 ri-lg"></i>
+        </button>
+      </div>
     </div>
-  </Col>
+  </Link>
 );
 
 export default ServicesList;

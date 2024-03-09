@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import HeroSlider from "../components/UI/HeroSlider";
 import Helmet from "../components/Helmet/Helmet";
 import { Container, Row, Col } from "reactstrap";
@@ -10,11 +10,65 @@ import Testimonial from "../components/UI/Testimonial";
 
 import BlogList from "../components/UI/BlogList";
 import { useQuery } from "react-query";
-import { getBlogs, getVehicles } from "../api";
+import { getBlogs, getServices, getVehicles } from "../api";
+import ErrorCM from "../components/Error/Error";
+import Loading from "../components/Loading";
+import Blog from "./Blog";
 
 const Home = () => {
-  const { data: vehiclesData } = useQuery("home-vehicles", getVehicles);
-  const { data: blogsData } = useQuery("home-blogs", getBlogs);
+  const [services, setServices] = useState(null);
+  const [isServiceLoading, setServiceLoading] = useState(false);
+  const [serviceError, setServiceError] = useState(null);
+  // same for blog
+  const [blogs, setBlogs] = useState(null);
+  const [isBlogLoading, setBlogLoading] = useState(false);
+  const [blogError, setBlogError] = useState(null);
+  // same for vehicle
+  const [vehicles, setVehicles] = useState(null);
+  const [isVehicleLoading, setVehicleLoading] = useState(false);
+  const [vehicleError, setVehicleError] = useState(null);
+  useEffect(() => {
+    const fetchServices = async () => {
+      setServiceLoading(true);
+      setServiceError(null);
+      try {
+        const data = await getServices();
+        setServices(data);
+        setServiceLoading(false);
+      } catch (error) {
+        setServiceLoading(false);
+        setServiceError(error.message);
+      }
+    }
+    const fetchBlogs = async () => {
+      setBlogLoading(true);
+      setBlogError(null);
+      try {
+        const data = await getBlogs();
+        setBlogs(data);
+        setBlogLoading(false);
+      } catch (error) {
+        setBlogLoading(false);
+        setBlogError(error.message);
+      }
+    }
+    const fetchVehicles = async () => {
+      setVehicleLoading(true);
+      setVehicleError(null);
+      try {
+        const data = await getVehicles();
+        setVehicles(data);
+        setVehicleLoading(false);
+      } catch (error) {
+        setVehicleLoading(false);
+        setVehicleError(error.message);
+      }
+    }
+    fetchServices();
+    fetchBlogs();
+    fetchVehicles();
+    return () => { };
+  }, []);
   return (
     <Helmet title="Home">
       {/* ============= hero section =========== */}
@@ -46,8 +100,17 @@ const Home = () => {
               <h6 className="section__subtitle">See our</h6>
               <h2 className="section__title">Popular Services</h2>
             </Col>
-
-            <ServicesList />
+            <div className="col">
+              {
+                isServiceLoading && <Loading />
+              }
+              {
+                serviceError && <ErrorCM errorMessage={serviceError} />
+              }
+              {
+                services && <ServicesList services={services} />
+              }
+            </div>
           </Row>
         </Container>
       </section>
@@ -60,9 +123,17 @@ const Home = () => {
               <h2 className="section__title">Our Limo Cars</h2>
             </Col>
 
-            {vehiclesData?.map((item) => (
-              <CarItem item={item} key={item.id} />
-            ))}
+            {
+              isVehicleLoading && <Loading />
+            }
+            {
+              vehicleError && <ErrorCM errorMessage={vehicleError} />
+            }
+            {
+              vehicles && (vehicles).map((vehicle, index) => (
+                <CarItem item={vehicle} key={index} />
+              ))
+            }
           </Row>
         </Container>
       </section>
@@ -92,7 +163,15 @@ const Home = () => {
               <h2 className="section__title">Latest Blogs</h2>
             </Col>
 
-            <BlogList blogs={blogsData} />
+            {
+              isBlogLoading && <Loading />
+            }
+            {
+              blogError && <ErrorCM errorMessage={blogError} />
+            }
+            {
+              blogs && <BlogList blogs={blogs} />
+            }
           </Row>
         </Container>
       </section>

@@ -123,17 +123,17 @@ const Contact = () => {
               <div className="contact__info">
                 <h6 className="fw-bold">Contact Information</h6>
                 <p className="section__description mb-0">
-                  {/* 123 ZindaBazar, Sylhet, Bangladesh */} Working Area
-                  country
+                  {/* 123 ZindaBazar, Sylhet, Bangladesh */} Working Area : 111 W 11th St Ste 234
+                  Beverly Hills, LA 90209
                 </p>
                 <div className=" d-flex align-items-center gap-2">
                   <h6 className="fs-6 mb-0">Phone:</h6>
-                  <p className="section__description mb-0">+8868389636</p>
+                  <p className="section__description mb-0"> +1 (206) 793 2186</p>
                 </div>
 
                 <div className=" d-flex align-items-center gap-2">
                   <h6 className="mb-0 fs-6">Email:</h6>
-                  <p className="section__description mb-0">examp@gmail.com</p>
+                  <p className="section__description mb-0">info@abclimo.com</p>
                 </div>
 
                 <h6 className="fw-bold mt-4">Follow Us</h6>
@@ -145,7 +145,7 @@ const Contact = () => {
                       key={index}
                       className="social__link-icon"
                     >
-                      <i class={item.icon}></i>
+                      <i className={item.icon}></i>
                     </Link>
                   ))}
                 </div>

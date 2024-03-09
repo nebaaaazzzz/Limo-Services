@@ -3,7 +3,7 @@ import * as yup from "yup";
 import React, { useEffect } from "react";
 import { Container, Row, Col, Form, FormGroup, Input } from "reactstrap";
 
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Helmet from "../components/Helmet/Helmet";
 
 import commentImg from "../assets/all-images/ava-1.jpg";
@@ -16,7 +16,7 @@ import {
   useQuery,
   useQueryClient,
 } from "react-query";
-import { BASE_URL, getBlog, getComments, postComment } from "../api.js";
+import { BASE_URL, getBlog, getBlogs, getComments, postComment } from "../api.js";
 import moment from "moment";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
@@ -24,29 +24,32 @@ import { toast } from "react-toastify";
 const BlogDetails = () => {
   const { slug } = useParams();
   // const blog = blogData.find((blog) => blog.title === slug);
+  const { data: blogs, isLoading: loading, isError: error } = useInfiniteQuery(
+    ["blogs"], () => getBlogs(1),
+  );
   const { data, isLoading, isError } = useQuery(["blog", slug], () =>
     getBlog(slug)
   );
-  const {
-    data: commentData,
-    fetchNextPage: fetchCommentNextPage,
-    isLoading: isCommentLoading,
-    isError: isCommentError,
-    hasNextPage: commentHasNextPage,
-    error: commentError,
-  } = useInfiniteQuery(
-    ["comments", slug],
-    ({ pageParam = 1 }) => {
-      return getComments(slug, pageParam);
-    },
-    {
-      getNextPageParam: (lastPage, pages) => {
-        if (lastPage.length) {
-          return pages.length + 1;
-        }
-      },
-    }
-  );
+  // const {
+  //   data: commentData,
+  //   fetchNextPage: fetchCommentNextPage,
+  //   isLoading: isCommentLoading,
+  //   isError: isCommentError,
+  //   hasNextPage: commentHasNextPage,
+  //   error: commentError,
+  // } = useInfiniteQuery(
+  //   ["comments", slug],
+  //   ({ pageParam = 1 }) => {
+  //     return getComments(slug, pageParam);
+  //   },
+  //   {
+  //     getNextPageParam: (lastPage, pages) => {
+  //       if (lastPage.length) {
+  //         return pages.length + 1;
+  //       }
+  //     },
+  //   }
+  // );
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [data]);
@@ -69,21 +72,21 @@ const BlogDetails = () => {
 
                 <div className="blog__publisher d-flex align-items-center gap-4 mb-4">
                   <span className="blog__author">
-                    <i class="ri-user-line"></i> {data?.user?.firstName}
+                    <i className="ri-user-line"></i> {data?.user?.firstName}
                   </span>
 
                   <span className=" d-flex align-items-center gap-1 section__description">
-                    <i class="ri-calendar-line"></i>{" "}
+                    <i className="ri-calendar-line"></i>{" "}
                     {moment(data.createdAt).format("D MMM , YYYY")}
                   </span>
 
                   <span className=" d-flex align-items-center gap-1 section__description">
-                    <i class="ri-time-line"></i>{" "}
+                    <i className="ri-time-line"></i>{" "}
                     {moment(data.createdAt).format("HH : mm a")}
                   </span>
                 </div>
-
-                <p className="section__description">{data.content}</p>
+                {/* ============== blog content ============ */}
+                <p className="section__description " style={{ whiteSpace: "pre-line" }} >{data.content}</p>
               </div>
 
               {/* <div className="comment__list mt-5">
@@ -105,6 +108,25 @@ const BlogDetails = () => {
                 {/* =============== comment form ============ */}
               {/* <CommentForm id={data.id} />
               </div> */} *
+            </Col>
+            <Col lg="4" md="4" className="ms-auto">
+              <div className="col-12">
+                {
+                  blogs && blogs.pages?.[0]?.map((blog) => {
+                    return <Link to={`/blogs/${blog.id}`} className="text-decoration-none text-dark row  align-items-start " key={blog.id} style={{ marginBottom: "20px" }}>
+                      <div className="w-25">
+                        <img src={blog.img} alt={blog.title} srcset="" className="img-fluid rounded-3" />
+                      </div>
+                      <div className="col px-0">
+                        <div className=" fw-bold">
+                          {blog.title}
+                        </div>
+                      </div>
+
+                    </Link>
+                  })
+                }
+              </div>
             </Col>
           </Row>
         </Container>

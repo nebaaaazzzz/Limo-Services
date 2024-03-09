@@ -46,8 +46,8 @@ const CarDetails = () => {
             <Col lg="6">
               <img
                 src={data.img}
-                style={{ aspectRatio: "1/1", objectFit: "contain" }}
-                alt=""
+                // style={{ aspectRatio: "1/1", objectFit: "contain" }}
+                alt="Car image"
                 className="w-100"
               />
             </Col>
@@ -56,7 +56,7 @@ const CarDetails = () => {
               <div className="car__info">
                 <h2 className="section__title">{data.name}</h2>
 
-               
+
 
                 <p className="section__description">{data.description}</p>
 
@@ -64,19 +64,19 @@ const CarDetails = () => {
                   className=" d-flex align-items-center mt-3"
                   style={{ columnGap: "4rem" }}
                 >
-                  
+
                 </div>
 
                 <div
                   className=" d-flex align-items-center mt-3"
                   style={{ columnGap: "2.8rem" }}
                 >
-                  
+
                 </div>
               </div>
             </Col>
 
-            <Col lg="7" className="mt-5">
+            <Col lg="7" className="mt-2">
               <div className="booking-info mt-5">
                 <h5 className="mb-4 fw-bold ">Booking Information</h5>
                 <BookingForm id={slug} />
