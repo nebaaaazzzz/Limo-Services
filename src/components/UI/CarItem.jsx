@@ -9,19 +9,19 @@ const CarItem = (props) => {
   const { img, model, pricePerDay, automatic, name, speed, id } = props.item;
 
   return (
-    <>
-      <div className="col-12 col-md-4 col-lg-3">
-        <div className="card">
+    <div className="col-12 col-md-4 col-lg-3 mb-3">
+      <div className="card">
+        <div className="card-image-with-fixed-height">
           <img className="card-img-top" src={img} alt="Card image cap" />
-          <div className="card-body">
-            <h5 className="card-title">{name}</h5>
-            <Link to={`/cars/${id}`} className="btn btn-dark">
-              Book Now
-            </Link>
-          </div>
+        </div>
+        <div className="card-body">
+          <h5 className="card-title">{name}</h5>
+          <Link to={`/cars/${id}`} className="btn btn-dark">
+            Book Now
+          </Link>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

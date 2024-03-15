@@ -71,9 +71,9 @@ const BlogDetails = () => {
                 <h2 className="section__title mt-4">{data.title}</h2>
 
                 <div className="blog__publisher d-flex align-items-center gap-4 mb-4">
-                  <span className="blog__author">
+                  {/* <span className="blog__author">
                     <i className="ri-user-line"></i> {data?.user?.firstName}
-                  </span>
+                  </span> */}
 
                   <span className=" d-flex align-items-center gap-1 section__description">
                     <i className="ri-calendar-line"></i>{" "}

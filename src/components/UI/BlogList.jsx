@@ -47,9 +47,9 @@ const BlogItem = ({ item }) => {
           </Link>
 
           <div className="blog__time pt-3 mt-3 d-flex align-items-center justify-content-between">
-            <span className="blog__author">
+            {/* <span className="blog__author">
               <i className="ri-user-line"></i> {firstName}
-            </span>
+            </span> */}
 
             <div className=" d-flex align-items-center gap-3">
               <span className=" d-flex align-items-center gap-1 section__description">

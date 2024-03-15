@@ -17,7 +17,16 @@ const ServicesList = (props) => {
 const ServiceItem = ({ item }) => (
   <Link to={`/services/${item.id}`} className="text-decoration-none col-12 col-md-4 col-lg-3 mb-2 ">
     <div className="card" >
-      <img className="card-img-top" src={item.img} alt="Card image cap" />
+      <div className="card-image-with-fixed-height" style={{
+        // background with faded image
+        background: `linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(${item.img})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        height: "200px",
+      }}>
+
+        <img className="card-img-top" src={item.img} alt="Card image cap" />
+      </div>
       <div className="card-body">
 
 
