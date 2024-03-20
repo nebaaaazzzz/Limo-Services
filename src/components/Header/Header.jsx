@@ -94,7 +94,7 @@ const Header = () => {
                   <i className="ri-time-line"></i>
                 </span>
                 <div className="header__location-content">
-                  <h6> 24/7</h6>
+                  <h6> 24/7 Service</h6>
                 </div>
               </div>
             </Col>
@@ -106,7 +106,7 @@ const Header = () => {
               className=" d-flex align-items-center justify-content-end "
             >
               <button className="header__btn btn ">
-                <a href="tel:+1 (206) 793 2186"><i className="ri-phone-line"></i>  +1 (206) 793 2186</a>
+                <a href="tel:+1 (206)-972-7000"><i className="ri-phone-line"></i>  +1 (206)-972-7000</a>
               </button>
             </Col>
           </Row>

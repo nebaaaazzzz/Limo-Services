@@ -22,15 +22,14 @@ const AboutSection = ({ aboutClass }) => {
                 Welcome to Our Limousine service
               </h2>
               <p className="section__description">
-                Discover unparalleled elegance with our premier limousine
-                service. Our commitment to top-notch service, pristine vehicles,
-                and expert chauffeurs ensures unforgettable experiences for
-                weddings, corporate events, and other special occasions. Choose
-                us to elevate your transportation experience with style and
-                sophistication.
+                Discover Seattle Like Never
+                Before - Glide Through the City's Bustling Streets and Serene Scenery with Our Exclusive
+                Limousine Service. Perfect for Special Occasions, Memorable Explorations, or Simply
+                Elevating Your Everyday. Welcome to a Service That Understands the Art of the Exceptional
+                Journey, Where Comfort Meets Convenience in Every Mile.
               </p>
 
-              <div className="about__section-item d-flex align-items-center">
+              {/* <div className="about__section-item d-flex align-items-center">
                 <p className="section__description d-flex align-items-center gap-2">
                   <i className="ri-checkbox-circle-line"></i> Luxury airport transfers.
                 </p>
@@ -48,7 +47,7 @@ const AboutSection = ({ aboutClass }) => {
                 <p className="section__description d-flex align-items-center gap-2">
                   <i className="ri-checkbox-circle-line"></i> VIP and celebrity transportation
                 </p>
-              </div>
+              </div> */}
             </div>
           </Col>
 

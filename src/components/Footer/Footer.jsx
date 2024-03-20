@@ -44,12 +44,9 @@ const Footer = () => {
               </h1>
             </div>
             <p className="footer__logo-content text-start">
-              Discover unparalleled elegance with our premier limousine service.
-              Our commitment to top-notch service, pristine vehicles, and expert
-              chauffeurs ensures unforgettable experiences for weddings,
-              corporate events, and other special occasions. Choose us to
-              elevate your transportation experience with style and
-              sophistication.
+              Seamless Journeys, Memorable Moments: Discover Your GoTo Seattle Limo Service, Where Every Ride Guarantees a Smooth Experience and Every
+              Destination Becomes a Cherished Memory. Let Us Be Your Bridge to Seattle's Best, One
+              Effortless Trip at a Time.
             </p>
           </Col>
 
@@ -68,12 +65,9 @@ const Footer = () => {
 
           <Col lg="3" md="3" sm="12">
             <div className="mb-4">
-              <h5 className="footer__link-title mb-4">Head Office</h5>
-              <p className="office__info">Area the company works: 111 W 11th St Ste 234
-                Beverly Hills, LA 90209 </p>{" "}
-              <p className="office__info">Phone: +1 (206) 793 2186</p>
+              <h5 className="footer__link-title mb-4">Contact info</h5>
+              <p className="office__info">Phone: <a className="text-decoration-none" href="tel:+1 (206)-972-7000">+1 (206)-972-7000</a></p>
               <p className="office__info">Email: <a href="mailto:info@abclimo.com" className="text-decoration-none">{" "} info@abclimo.com</a></p>
-              <p className="office__info">Office Time: 12 AM – 12 AM</p>
             </div>
           </Col>
 

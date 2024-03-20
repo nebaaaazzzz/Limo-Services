@@ -75,7 +75,7 @@ const Contact = () => {
                 <FormGroup className="contact__form">
                   <Input
                     value={name}
-                    placeholder="Your Name"
+                    placeholder="Full Name"
                     onChange={(e) => {
                       setName(e.target.value);
                     }}
@@ -122,21 +122,18 @@ const Contact = () => {
             <Col lg="5" md="5">
               <div className="contact__info">
                 <h6 className="fw-bold">Contact Information</h6>
-                <p className="section__description mb-0">
-                  {/* 123 ZindaBazar, Sylhet, Bangladesh */} Working Area : 111 W 11th St Ste 234
-                  Beverly Hills, LA 90209
-                </p>
+
                 <div className=" d-flex align-items-center gap-2">
                   <h6 className="fs-6 mb-0">Phone:</h6>
-                  <p className="section__description mb-0"> +1 (206) 793 2186</p>
+                  <p className="section__description mb-0"> <a className="text-decoration-none text-dark" href="tel:+1(206)-972-7000">+1(206)-972-7000</a></p>
                 </div>
 
                 <div className=" d-flex align-items-center gap-2">
                   <h6 className="mb-0 fs-6">Email:</h6>
-                  <p className="section__description mb-0">info@abclimo.com</p>
+                  <p className="section__description mb-0"><a className="text-decoration-none text-dark" href="mailto:info@abclimo.com">info@abclimo.com</a></p>
                 </div>
 
-                <h6 className="fw-bold mt-4">Follow Us</h6>
+                {/* <h6 className="fw-bold mt-4">Follow Us</h6>
 
                 <div className=" d-flex align-items-center gap-4 mt-3">
                   {socialLinks.map((item, index) => (
@@ -148,7 +145,7 @@ const Contact = () => {
                       <i className={item.icon}></i>
                     </Link>
                   ))}
-                </div>
+                </div> */}
               </div>
             </Col>
           </Row>

@@ -14,51 +14,51 @@ const About = () => {
       <CommonSection title="About Us" />
       <AboutSection aboutclassName="aboutPage" />
 
-      <section className="about__page-section">
+      <section className="about__page-section py-1">
         <Container>
           <Row>
-            <Col lg="6" md="6" sm="12">
-              <div className="about__page-img">
-                <img src={driveImg} alt="" className="w-100 rounded-3" />
-              </div>
-            </Col>
-
-            <Col lg="6" md="6" sm="12">
-              <div className="about__page-content">
-                <h2 className="section__title">
-                  We Are Committed To Provide Safe Ride Solution
-                </h2>
-
-                <p className="section__description">
-                  We Are Committed To Provide Safe Ride Solutions: Prioritizing
-                  safety and comfort, our service boasts meticulously maintained
-                  vehicles, rigorously trained chauffeurs, and advanced safety
-                  features. Enjoy peace of mind knowing your journey is secure,
-                  allowing you to relax and savor the luxurious experience with
-                  confidence.
+            <ul>
+              <li>
+                <p>
+                  <img src={driveImg} alt="" style={{ float: "left", marginRight: '10px' }} className="col-12 col-md-6 col-lg-3 rounded-3" />
+                  <strong>Safety and Security : </strong> In Seattle's Ever-Changing Landscape, Our
+                  Limousine Service Stands as a Pillar of Safety and Security. We prioritize your well-being,
+                  integrating advanced safety features and thorough protocols to ensure every journey is a
+                  secure passage. With us, you're not just traveling; you're embraced by a commitment to your
+                  safety, allowing you to enjoy the city's beauty with peace of mind. Welcome to a service
+                  where security isn't just promised; it's delivered with every mile.</p>
+              </li>
+              <li>
+                <p><strong>Exceptional customer service - </strong> In the Heart of Seattle’s Dynamic
+                  Spirit, Our Limousine Service Elevates Your Experience with Unmatched Customer Service.
+                  Here, Every Request is an Opportunity to Impress, and Every Ride a Chance to Exceed
+                  Expectations. With a Team as Attentive as They Are Expert, We Ensure Your Seattle Journeys
+                  are Smooth, Personalized, and Responsive to Your Unique Needs. Dive into a World Where
+                  Your Satisfaction is Our Blueprint for Success, and Exceptional Service is Just the Beginning.</p>
+              </li>
+              <li>
+                <p>
+                  <strong>Professionalism and Excellence - </strong> Discover Seattle's Charm with a
+                  Service Synonymous with Professionalism and Excellence. Our Limousine Service Embarks on
+                  Every Journey with a Pledge to Deliver Beyond Expectations, Integrating Meticulous Attention
+                  to Detail with a Steadfast Commitment to Quality. Our Team, Champions of Expertise and
+                  Grace, Elevates Your Travel Experience, Ensuring Every Moment is Infused with Precision and
+                  Splendor. Welcome to a World Where Excellence is Not Just Pursued; It's Achieved, Making
+                  Every Ride with Us an Unforgettable Emblem of Professionalism.
                 </p>
-
-                <p className="section__description">
-                  Our dedication to safe ride solutions is unwavering, as we
-                  consistently update and enforce safety protocols, adhere to
-                  stringent vehicle maintenance standards, and provide ongoing
-                  training for our chauffeurs. Rest assured, we prioritize your
-                  well-being, ensuring you arrive at your destination with ease
-                  and elegance.
+              </li>
+              <li>
+                <p>
+                  <strong>Luxury and Comfort - </strong> Explore Seattle with a Touch of Luxury and
+                  Comfort That Feels Just Right. Our Limousine Service is All About Giving You a Smooth,
+                  Enjoyable Ride Every Time. We've Focused on the Essentials: Spacious Interiors, Comfortable
+                  Seating, and a Quiet Ride, to Ensure You Can Sit Back, Relax, and Take in the Sights. It's the
+                  Perfect Blend of Simple Elegance and Practicality, Designed to Make Your Seattle Journeys
+                  Memorable for All the Right Reasons. Welcome to a Service Where Your Comfort is Our
+                  Priority, Without the Over-the-Top Extras.
                 </p>
-
-                <div className=" d-flex align-items-center gap-3 mt-4">
-                  <span className="fs-4">
-                    <i className="ri-phone-line"></i>
-                  </span>
-
-                  <div>
-                    <h6 className="section__subtitle">Need Any Help?</h6>
-                    <h4>+1 (206) 793 2186</h4>
-                  </div>
-                </div>
-              </div>
-            </Col>
+              </li>
+            </ul>
           </Row>
         </Container>
       </section>

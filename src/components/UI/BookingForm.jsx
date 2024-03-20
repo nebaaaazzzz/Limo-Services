@@ -114,7 +114,7 @@ const BookingForm = ({ id }) => {
           className={` ${errors.fromAddress ? "border-danger" : ""}`}
           {...register("fromAddress")}
           type="text"
-          placeholder="from address"
+          placeholder="Pick-up Location"
         />
       </FormGroup>
       <FormGroup className="booking__form d-inline-block ms-1 mb-4">
@@ -122,7 +122,7 @@ const BookingForm = ({ id }) => {
           type="text"
           className={` ${errors.toAddress ? "border-danger" : ""}`}
           {...register("toAddress")}
-          placeholder="to address"
+          placeholder="Drop-off Location"
         />
       </FormGroup>
       <FormGroup className="booking__form d-inline-block me-4 mb-4">
@@ -130,7 +130,7 @@ const BookingForm = ({ id }) => {
           className={` ${errors.personCount ? "border-danger" : ""}`}
           {...register("personCount")}
           type="text"
-          placeholder="person count"
+          placeholder="Number of Passengers"
         />
       </FormGroup>
       <FormGroup className="booking__form d-inline-block ms-1 mb-4">
@@ -138,7 +138,7 @@ const BookingForm = ({ id }) => {
           className={` ${errors.luggageCount ? "border-danger" : ""}`}
           type="text"
           {...register("luggageCount")}
-          placeholder="luggage count"
+          placeholder="Number of Luggage"
         />
       </FormGroup>
       <FormGroup className="booking__form d-inline-block me-4 mb-4">
@@ -146,25 +146,26 @@ const BookingForm = ({ id }) => {
           className={` ${errors.date ? "border-danger" : ""}`}
           type="date"
           {...register("date")}
-          placeholder="Journey Date"
+          placeholder="Pick-up Date"
         />
       </FormGroup>
 
       <FormGroup className="booking__form d-inline-block ms-1 mb-4">
         <input
-          className={`time__picker ${errors.time ? "border-danger" : ""}`}
+          className={`time__picke ${errors.time ? "border-danger" : ""}`}
           type="time"
           {...register("time")}
-          placeholder="Journey Time"
+          placeholder="Pick-up Time"
         />
       </FormGroup>
-      <FormGroup className="booking__form d-inline-block">
+      <FormGroup className="booking__form d-inline-block d-none">
         <select
           className={` ${errors.driverGender ? "border-danger" : ""}`}
           {...register("driverGender")}
+          value={'male'}
         >
           <option value="">Select Driver Gender</option>
-          <option value="male">Male</option>
+          <option value="male" >Male</option>
           <option value="female">Female</option>
           <option value="other">Other</option>
         </select>
@@ -182,7 +183,7 @@ const BookingForm = ({ id }) => {
           className={`text_area ${errors.description ? " border-danger" : ""}`}
           {...register("description")}
           type="textarea"
-          placeholder="Write"
+          placeholder="Additional Pick-up Note"
         ></textarea>
       </FormGroup>
       <button className="bookbutton">Book Now</button>
