@@ -8,12 +8,12 @@
       "type": "image/x-icon"
     },
     {
-      "src": "mainlogo.jpg",
+      "src": "192x192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "mainlogo.jpg",
+      "src": "512x512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
