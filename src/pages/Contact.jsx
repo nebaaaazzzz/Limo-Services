@@ -29,27 +29,12 @@ const Contact = () => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const sendEmail = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
     await contactFormMail({ name, email, phone, message });
-    // emailjs
-    //   .sendForm(
-    //     "service_er3t4rd",
-    //     "template_l8ral8f",
-    //     form.current,
-    //     "jCA_n2fcS5PuK4pQb"
-    //   )
-    //   .then(
-    //     (result) => {
-    //       console.log(result.text);
-    //
-    //     },
-    //     (error) => {
-    //       alert(
-    //         "Sorry, your message could not be sent. Please try again later."
-    //       );
-    //     }
-    //   );
+    setIsLoading(false);
     toast.success("Message sent, We will contact you shortly", {
       position: toast.POSITION.TOP_CENTER,
       autoClose: 5000,
@@ -70,53 +55,71 @@ const Contact = () => {
           <Row>
             <Col lg="7" md="7">
               <h6 className="fw-bold mb-4">Get In Touch</h6>
-
-              <form ref={form} onSubmit={sendEmail}>
-                <FormGroup className="contact__form">
-                  <Input
-                    value={name}
-                    placeholder="Full Name"
-                    onChange={(e) => {
-                      setName(e.target.value);
-                    }}
-                    type="text"
-                    name="user_name"
-                  />
-                </FormGroup>
-                <FormGroup className="contact__form">
-                  <Input
-                    value={email}
-                    placeholder="Email"
-                    onChange={(e) => {
-                      setEmail(e.target.value);
-                    }}
-                    type="email"
-                    name="user_email"
-                  />
-                </FormGroup>
-                <FormGroup
-                  value={phone}
-                  onChange={(e) => {
-                    setPhone(e.target.value);
+              {
+                isLoading ? <div
+                  style={{
+                    display: "flex",
+                    width: "100%",
+                    aspectRatio: "3 / 1",
+                    alignItems: "center",
+                    justifyContent: "center",
                   }}
-                  className="contact__form"
                 >
-                  <Input placeholder="Phone" type="text" name="user_phone" />
-                </FormGroup>
-                <FormGroup className="contact__form">
-                  <textarea
-                    rows="5"
-                    value={message}
-                    onChange={(e) => {
-                      setMessage(e.target.value);
-                    }}
-                    placeholder="Message"
-                    className="text_area"
-                    name="message"
-                  ></textarea>
-                </FormGroup>
-                <input className="contact__btn" type="submit" value="Send" />
-              </form>
+                  <div
+                    className="spinner-border spinner-border-lg text-primary"
+                    role="status"
+                  >
+                    <span className="visually-hidden">Loading...</span>
+                  </div>
+                </div>
+                  :
+                  <form ref={form} onSubmit={sendEmail}>
+                    <FormGroup className="contact__form">
+                      <Input
+                        value={name}
+                        placeholder="Full Name"
+                        onChange={(e) => {
+                          setName(e.target.value);
+                        }}
+                        type="text"
+                        name="user_name"
+                      />
+                    </FormGroup>
+                    <FormGroup className="contact__form">
+                      <Input
+                        value={email}
+                        placeholder="Email"
+                        onChange={(e) => {
+                          setEmail(e.target.value);
+                        }}
+                        type="email"
+                        name="user_email"
+                      />
+                    </FormGroup>
+                    <FormGroup
+                      value={phone}
+                      onChange={(e) => {
+                        setPhone(e.target.value);
+                      }}
+                      className="contact__form"
+                    >
+                      <Input placeholder="Phone" type="text" name="user_phone" />
+                    </FormGroup>
+                    <FormGroup className="contact__form">
+                      <textarea
+                        rows="5"
+                        value={message}
+                        onChange={(e) => {
+                          setMessage(e.target.value);
+                        }}
+                        placeholder="Message"
+                        className="text_area"
+                        name="message"
+                      ></textarea>
+                    </FormGroup>
+                    <input className="contact__btn" type="submit" value="Send" />
+                  </form>
+              }
             </Col>
 
             <Col lg="5" md="5">

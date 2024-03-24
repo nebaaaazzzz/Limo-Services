@@ -39,6 +39,7 @@ const BookingForm = ({ id }) => {
     const time = data.time.split(":");
     delete dataClone.date;
     delete dataClone.time;
+    dataClone.description = dataClone.description ? dataClone.description : " ";
     mutation.mutate({
       ...dataClone,
       journeyDate: new Date(new Date(data.date).setHours(time[0], time[1])),

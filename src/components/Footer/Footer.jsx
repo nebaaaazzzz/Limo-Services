@@ -67,7 +67,7 @@ const Footer = () => {
             <div className="mb-4">
               <h5 className="footer__link-title mb-4">Contact info</h5>
               <p className="office__info">Phone: <a className="text-decoration-none" href="tel:+1 (206)-972-7000">+1 (206)-972-7000</a></p>
-              <p className="office__info">Email: <a href="mailto:info@abclimo.com" className="text-decoration-none">{" "} info@abclimo.com</a></p>
+              <p className="office__info">Email: <a href="mailto:abclimo2000@gmail.com" className="text-decoration-none">{" "} abclimo2000@gmail.com</a></p>
             </div>
           </Col>
 
